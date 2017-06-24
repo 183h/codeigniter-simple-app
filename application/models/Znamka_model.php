@@ -2,10 +2,10 @@
 
 class Znamka_model extends CI_Model {
 
-        public $id;
+        public $idZnamky;
         public $meno;
         public $priezvisko;
         public $datum;
-        public $aktivitaId;
+        public $Aktivity_idAktivity;
 
 }
