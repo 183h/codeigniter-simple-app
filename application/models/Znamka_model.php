@@ -1,3 +1,5 @@
+<?php
+
 class Znamka_model extends CI_Model {
 
         public $id;
