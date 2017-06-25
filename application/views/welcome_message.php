@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<td>
     					<div class="btn-group" role="group" aria-label="...">
   							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/viewActivityUpdateForm/$tableRow->idAktivity"); ?>" role="button">Update</a>
-  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteActivty/$tableRow->idAktivity"); ?>" role="button">Delete</a>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteActivity/$tableRow->idAktivity"); ?>" role="button">Delete</a>
 						</div>
 					</td>				
 				</tr>

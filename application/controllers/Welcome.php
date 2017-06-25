@@ -107,7 +107,7 @@ GROUP BY student');
 		redirect(base_url(''), 'refresh');
 	}
 
-	public function deleteActivity(){
+	public function deleteActivity($id){
 		$this->db->where('idAktivity', $id);
 		$this->db->delete('Aktivity');
 
