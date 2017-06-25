@@ -119,8 +119,8 @@ GROUP BY student');
 		$queryGrade = $this->db->query('SELECT * FROM Znamky WHERE idZnamky ='.$id);
 		$data['queryGrade'] = $queryGrade->result();
 
-		$queryAktivity = $this->db->query('SELECT * FROM Aktivity');
-		$data['queryResultAktivity'] = $queryAktivity->result();
+		$queryActivity = $this->db->query('SELECT * FROM Aktivity');
+		$data['queryResultAktivity'] = $queryActivity->result();
 
 		if (!isset($data['queryGrade'])){
 			$data['heading'] = "Chyba";
@@ -133,7 +133,15 @@ GROUP BY student');
 	}
 
 	public function viewActivityUpdateForm($id){
-		$data['id'] = $id; 
+		$queryActivity = $this->db->query('SELECT * FROM Aktivity WHERE idAktivity ='.$id);
+		$data['queryActivity'] = $queryActivity->result();
+
+		if (!isset($data['queryActivity'])){
+			$data['heading'] = "Chyba";
+			$data['message'] = "Znamka neexistuje!";
+			
+			return $this->load->view('errors/html/error_404', $data);
+		}
 
 		$this->load->view('activity_update', $data);
 	}
