@@ -37,6 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				<td><?php echo $tableRow->priezvisko;?></td>
     				<td><?php echo $tableRow->datum;?></td>
     				<td><?php echo $tableRow->Aktivity_idAktivity;?></td>
+    				<td><?php echo $tableRow->body;?></td>
+
     				<td>
     					<div class="btn-group" role="group" aria-label="...">
   							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/updateGrade/$tableRow->idZnamky"); ?>" role="button">Update</a>
@@ -89,6 +91,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
                 	<input type="text" name="date" id="date" class="required">
+  					<br>
+
+  					<label class="control-label" for="points">Body&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="points" id="points" class="required">
   					<br>
   					<br>
 
