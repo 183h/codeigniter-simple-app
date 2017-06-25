@@ -103,4 +103,15 @@ class Welcome extends CI_Controller {
 
 		redirect(base_url(''), 'refresh');
 	}
+
+	public function deleteGrade($id){
+		$this->db->where('idZnamky', $id);
+		$this->db->delete('Znamky');
+
+		redirect(base_url(''), 'refresh');
+	}
+
+	public function deleteActivity(){
+		
+	}
 }
