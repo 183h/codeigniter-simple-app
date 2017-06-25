@@ -166,6 +166,19 @@ GROUP BY student');
 	}
 
 	public function updateActivity($id){
+		$postData = $this->input->post();
 
+		$data = array(
+					'nazov' => $postData['label'],
+       				'popis' => $postData['info'],
+       				'maximum' => $postData['max']
+			);
+
+		$where = "idAktivity = ".$id;
+
+		$query = $str = $this->db->update_string('Aktivity', $data, $where);
+		$this->db->query($query);
+
+		redirect(base_url(''), 'refresh');
 	}
 }
