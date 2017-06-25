@@ -85,12 +85,6 @@ GROUP BY student');
         		$data['statusSuccess'] = FALSE;
       		}
    		}
-   	
-   		$queryZnamky = $this->db->query('SELECT * FROM Znamky');
-		$queryAktivity = $this->db->query('SELECT * FROM Aktivity');
-		$data['queryResultZnamky'] = $queryZnamky->result();
-		$data['queryResultAktivity'] = $queryAktivity->result();
-       	$data['contact_form'] = $this->config->item('contact_rules');
 
        	$postData = $this->input->post();
 
