@@ -59,6 +59,7 @@ class Welcome extends CI_Controller {
        				'meno' => $postData['name'],
        				'priezvisko' => $postData['surname'],
        				'datum' => $postData['date'],
+       				'body' => $postData['points'],
        				'Aktivity_idAktivity' => $postData['activity']
        			);
 
@@ -112,6 +113,9 @@ class Welcome extends CI_Controller {
 	}
 
 	public function deleteActivity(){
-		
+		$this->db->where('idAktivity', $id);
+		$this->db->delete('Aktivity');
+
+		redirect(base_url(''), 'refresh');
 	}
 }
