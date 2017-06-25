@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     				<td>
     					<div class="btn-group" role="group" aria-label="...">
-  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/updateGrade/$tableRow->idZnamky"); ?>" role="button">Update</a>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/viewGradeUpdateForm/$tableRow->idZnamky"); ?>" role="button">Update</a>
   							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteGrade/$tableRow->idZnamky"); ?>" role="button">Delete</a>
 						</div>
 					</td>
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				<td><?php echo $tableRow->maximum;?></td>
 					<td>
     					<div class="btn-group" role="group" aria-label="...">
-  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/updateActivity/$tableRow->idAktivity"); ?>" role="button">Update</a>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/viewActivityUpdateForm/$tableRow->idAktivity"); ?>" role="button">Update</a>
   							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteActivty/$tableRow->idAktivity"); ?>" role="button">Delete</a>
 						</div>
 					</td>				
