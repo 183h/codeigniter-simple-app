@@ -39,8 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				<td><?php echo $tableRow->Aktivity_idAktivity;?></td>
     				<td>
     					<div class="btn-group" role="group" aria-label="...">
-  							<button type="button" class="btn btn-default">Delete</button>
-  							<button type="button" class="btn btn-default">Update</button>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/updateGrade/$tableRow->idZnamky"); ?>" role="button">Update</a>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteGrade/$tableRow->idZnamky"); ?>" role="button">Delete</a>
 						</div>
 					</td>
 				</tr>
@@ -65,8 +65,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				<td><?php echo $tableRow->maximum;?></td>
 					<td>
     					<div class="btn-group" role="group" aria-label="...">
-  							<button type="button" class="btn btn-default">Delete</button>
-  							<button type="button" class="btn btn-default">Update</button>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/updateActivity/$tableRow->idAktivity"); ?>" role="button">Update</a>
+  							<a class="btn btn-default" href="<?php echo base_url("index.php/welcome/deleteActivty/$tableRow->idAktivity"); ?>" role="button">Delete</a>
 						</div>
 					</td>				
 				</tr>
@@ -115,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 	<input type="text" name="label" id="label" class="required">
                 	<br>
 
-                	<label class="control-label" for="surname">Popis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<label class="control-label" for="info">Popis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
                 	<input type="text" name="info" id="info" class="required">
   					<br>
 
