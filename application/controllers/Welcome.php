@@ -151,7 +151,22 @@ GROUP BY student');
 	}
 
 	public function updateGrade($id){
+		$postData = $this->input->post();
 
+		$data = array(
+					'meno' => $postData['name'],
+       				'priezvisko' => $postData['surname'],
+       				'datum' => $postData['date'],
+       				'body' => $postData['points'],
+       				'Aktivity_idAktivity' => $postData['activity']
+			);
+
+		$where = "idZnamky = ".$id;
+
+		$query = $str = $this->db->update_string('Znamky', $data, $where);
+		$this->db->query($query);
+
+		redirect(base_url(''), 'refresh');
 	}
 
 	public function updateActivity($id){
