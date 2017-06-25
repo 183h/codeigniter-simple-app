@@ -28,6 +28,11 @@ class Welcome extends CI_Controller {
 		$data['queryResultZnamky'] = $queryZnamky->result();
 		$data['queryResultAktivity'] = $queryAktivity->result();
 
+		$queryPointsPerStudent = $this->db->query(
+			'SELECT CONCAT(`meno`, " ", `priezvisko`) as student, SUM(body) as body FROM mydb.Znamky as z
+JOIN mydb.Aktivity as a ON  z.Aktivity_idAktivity = a.idAktivity
+GROUP BY student');
+
 		$this->load->view('welcome_message', $data);
 	}
 
@@ -117,5 +122,13 @@ class Welcome extends CI_Controller {
 		$this->db->delete('Aktivity');
 
 		redirect(base_url(''), 'refresh');
+	}
+
+	public function viewGradeUpdateForm($id){
+		$this->load->view('grade_update', $id);
+	}
+
+	public function viewActivityUpdateForm($id){
+		$this->load->view('activity_update', $id);
 	}
 }
