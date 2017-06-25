@@ -20,6 +20,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->model('Znamka_model', '', TRUE);
+
+		$queryZnamky = $this->db->query('SELECT * FROM Znamky');
+		$queryAktivity = $this->db->query('SELECT * FROM Aktivity');
+		$data['queryResultZnamky'] = $queryZnamky->result();
+		$data['queryResultAktivity'] = $queryAktivity->result();
+
+		$this->load->view('welcome_message', $data);
 	}
 }
