@@ -15,6 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#znamky">Znamky</a></li>
     <li><a data-toggle="tab" href="#aktivity">Aktivity</a></li>
+    <li><a data-toggle="tab" href="#pridajZnamku">Pridaj znamku</a></li>
+    <li><a data-toggle="tab" href="#pridajAktivitu">Pridaj aktivitu</a></li>
   </ul>
 
   <div class="tab-content">
@@ -71,9 +73,64 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   			<?php endforeach;?>
 		</table>
     </div>
+
+	<div id="pridajZnamku" class="tab-pane fade">
+		<div class="span4" id="error">
+        	<form name="contact" method="post" action="<?php echo base_url("index.php/welcome/createGrade"); ?>" id="contact" class="well">  
+            	<fieldset>
+                	<legend>Pridaj znamku</legend> 
+                	<label class="control-label" for="name">Meno&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="name" id="name" class="required">
+                	<br>
+
+                	<label class="control-label" for="surname">Priezvisko :</label>
+                	<input type="text" name="surname" id="surname" class="required">
+  					<br>
+
+                	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="date" id="date" class="required">
+  					<br>
+  					<br>
+
+  					<select name="activity">
+  					  	<?php foreach ($queryResultAktivity as $tableRow):?>
+    						<option value="<?php echo $tableRow->idAktivity;?>"><?php echo $tableRow->nazov;?></option>
+    					<?php endforeach;?>
+  					</select>
+  					<br>
+  					<br>
+
+                	<input type="submit" name="submit" id="submit" value="Vytvor" class="btn btn-success">
+            	</fieldset>
+        	</form>
+        </div>
+    </div>
+
+    <div id="pridajAktivitu" class="tab-pane fade">
+		<div class="span4" id="error">
+        	<form name="contact" method="post" action="<?php echo base_url("index.php/welcome/createActivity"); ?>" id="contact" class="well">  
+            	<fieldset>
+                	<legend>Pridaj znamku</legend> 
+                	<label class="control-label" for="label">Nazov&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="label" id="label" class="required">
+                	<br>
+
+                	<label class="control-label" for="surname">Popis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="info" id="info" class="required">
+  					<br>
+
+                	<label class="control-label" for="max">Maximum&nbsp&nbsp&nbsp&nbsp:</label>
+                	<input type="text" name="max" id="max" class="required">
+  					<br>
+  					<br>
+
+                	<input type="submit" name="submit" id="submit" value="Vytvor" class="btn btn-success">
+            	</fieldset>
+        	</form>
+        </div>
+    </div>
   </div>
 </div>
-
 
 </body>
 </html>
