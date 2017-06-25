@@ -127,10 +127,34 @@ GROUP BY student');
 	}
 
 	public function viewGradeUpdateForm($id){
-		$this->load->view('grade_update', $id);
+
+		$queryGrade = $this->db->query('SELECT * FROM Znamky WHERE idZnamky ='.$id);
+		$data['queryGrade'] = $queryGrade->result();
+
+		$queryAktivity = $this->db->query('SELECT * FROM Aktivity');
+		$data['queryResultAktivity'] = $queryAktivity->result();
+
+		if (!isset($data['queryGrade'])){
+			$data['heading'] = "Chyba";
+			$data['message'] = "Znamka neexistuje!";
+			
+			return $this->load->view('errors/html/error_404', $data);
+		}
+
+		$this->load->view('grade_update', $data);
 	}
 
 	public function viewActivityUpdateForm($id){
-		$this->load->view('activity_update', $id);
+		$data['id'] = $id; 
+
+		$this->load->view('activity_update', $data);
+	}
+
+	public function updateGrade($id){
+
+	}
+
+	public function updateActivity($id){
+
 	}
 }
