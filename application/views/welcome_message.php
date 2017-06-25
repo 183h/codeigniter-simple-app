@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#znamky">Znamky</a></li>
     <li><a data-toggle="tab" href="#aktivity">Aktivity</a></li>
+    <li><a data-toggle="tab" href="#body">Body studentov</a></li>
     <li><a data-toggle="tab" href="#pridajZnamku">Pridaj znamku</a></li>
     <li><a data-toggle="tab" href="#pridajAktivitu">Pridaj aktivitu</a></li>
   </ul>
@@ -28,7 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     			<th>Priezvisko</th>
     			<th>Datum</th>
     			<th>Aktivita</th>
-    			<th>Akcia</th>
+    			<th>Body</th>
+	   			<th>Akcia</th>
   			</tr>
   			<?php foreach ($queryResultZnamky as $tableRow):?>
 				<tr>
@@ -134,6 +136,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	</fieldset>
         	</form>
         </div>
+    </div>
+
+    <div id="body" class="tab-pane fade">
+		<table class="table table-striped">
+  			<tr>
+    			<th>Student</th>
+    			<th>Body</th>
+  			</tr>
+  			<?php foreach ($queryResultBody as $tableRow):?>
+				<tr>
+    				<td><?php echo $tableRow->student;?></td>
+    				<td><?php echo $tableRow->body;?></td>			
+				</tr>
+  			<?php endforeach;?>
+		</table>
     </div>
   </div>
 </div>

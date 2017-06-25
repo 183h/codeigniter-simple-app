@@ -32,6 +32,8 @@ class Welcome extends CI_Controller {
 			'SELECT CONCAT(`meno`, " ", `priezvisko`) as student, SUM(body) as body FROM mydb.Znamky as z
 JOIN mydb.Aktivity as a ON  z.Aktivity_idAktivity = a.idAktivity
 GROUP BY student');
+		$data['queryResultBody'] = $queryPointsPerStudent->result();
+
 
 		$this->load->view('welcome_message', $data);
 	}
