@@ -14,23 +14,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	<fieldset>
                 	<legend>Zmen znamku</legend> 
                 	<label class="control-label" for="name">Meno&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="name" id="name" class="required" value="<?php echo $queryGrade[0]->meno?>">
+                	<input type="text" name="name" id="name" class="required" required="required" value="<?php echo $queryGrade[0]->meno?>">
                 	<br>
 
                 	<label class="control-label" for="surname">Priezvisko :</label>
-                	<input type="text" name="surname" id="surname" class="required" value="<?php echo $queryGrade[0]->priezvisko?>">
+                	<input type="text" name="surname" id="surname" class="required" required="required" value="<?php echo $queryGrade[0]->priezvisko?>">
   					<br>
 
                 	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="date" id="date" class="required" value="<?php echo $queryGrade[0]->datum?>">
+                	<input type="date" name="date" id="date" class="required" required="required" value="<?php echo $queryGrade[0]->datum?>">
   					<br>
 
   					<label class="control-label" for="points">Body&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="points" id="points" class="required" value="<?php echo $queryGrade[0]->body?>">
+                	<input type="number" name="points" id="points" class="required" required="required" value="<?php echo $queryGrade[0]->body?>">
   					<br>
   					<br>
 
-  					<select name="activity">
+  					<select name="activity" required="required">
   					  	<?php foreach ($queryResultAktivity as $tableRow):?>
     						<option value="<?php echo $tableRow->idAktivity;?>"><?php echo $tableRow->nazov;?></option>
     					<?php endforeach;?>

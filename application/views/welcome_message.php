@@ -84,23 +84,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	<fieldset>
                 	<legend>Pridaj znamku</legend> 
                 	<label class="control-label" for="name">Meno&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="name" id="name" class="required">
+                	<input type="text" name="name" id="name" class="required" required="required">
                 	<br>
 
                 	<label class="control-label" for="surname">Priezvisko :</label>
-                	<input type="text" name="surname" id="surname" class="required">
+                	<input type="text" name="surname" id="surname" class="required" required="required">
   					<br>
 
                 	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="date" id="date" class="required">
+                	<input type="date" name="date" id="date" class="required" required="required">
   					<br>
 
   					<label class="control-label" for="points">Body&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="points" id="points" class="required">
+                	<input type="number" name="points" id="points" required="required" class="required">
   					<br>
   					<br>
 
-  					<select name="activity">
+  					<select name="activity" required="required">
   					  	<?php foreach ($queryResultAktivity as $tableRow):?>
     						<option value="<?php echo $tableRow->idAktivity;?>"><?php echo $tableRow->nazov;?></option>
     					<?php endforeach;?>
@@ -120,15 +120,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	<fieldset>
                 	<legend>Pridaj znamku</legend> 
                 	<label class="control-label" for="label">Nazov&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="label" id="label" class="required">
+                	<input type="text" name="label" id="label" required="required" class="required">
                 	<br>
 
                 	<label class="control-label" for="info">Popis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="info" id="info" class="required">
+                	<input type="text" name="info" id="info" required="required" class="required">
   					<br>
 
                 	<label class="control-label" for="max">Maximum&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="max" id="max" class="required">
+                	<input type="number" name="max" id="max" required="required" class="required">
   					<br>
   					<br>
 

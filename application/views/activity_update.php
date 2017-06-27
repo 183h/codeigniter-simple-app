@@ -14,15 +14,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	<fieldset>
                 	<legend>Zmen Aktivitu</legend> 
                 	<label class="control-label" for="label">Nazov&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="label" id="label" class="required" value="<?php echo $queryActivity[0]->nazov?>">
+                	<input type="text" name="label" id="label" required="required" class="required" value="<?php echo $queryActivity[0]->nazov?>">
                 	<br>
 
                 	<label class="control-label" for="info">Popis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="info" id="info" class="required" value="<?php echo $queryActivity[0]->popis?>">
+                	<input type="text" name="info" id="info" required="required" class="required" value="<?php echo $queryActivity[0]->popis?>">
   					<br>
 
                 	<label class="control-label" for="max">Maximum&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="text" name="max" id="max" class="required" value="<?php echo $queryActivity[0]->maximum?>">
+                	<input type="number" name="max" id="max" required="required" class="required" value="<?php echo $queryActivity[0]->maximum?>">
   					<br>
 
                 	<input type="submit" name="submit" id="submit" value="Vytvor" class="btn btn-success">
