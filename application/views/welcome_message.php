@@ -93,6 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
                 	<input type="date" name="date" id="date" class="required" required="required" required pattern="[0-9]{4}-[0-1][0-9]-[0-3][0-9]">
+                	<label class="control-label" for="date">Format datumu : YYYY-MM-DD</label>
   					<br>
 
   					<label class="control-label" for="points">Body&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
