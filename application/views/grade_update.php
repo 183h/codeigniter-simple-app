@@ -6,6 +6,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.2.1.min.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+
+  <script>
+    $(function() {
+      $( "#datepicker" ).datepicker();
+    });
+  </script>
 </head>
 <body>
 
@@ -22,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   					<br>
 
                 	<label class="control-label" for="date">Datum&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
-                	<input type="date" name="date" id="date" class="required" required="required" value="<?php echo $queryGrade[0]->datum?>">
+                	<input type="date" name="date" id="datepicker" class="required" required="required" required pattern="[0-9]{4}-[0-1][0-9]-[0-3][0-9]" value="<?php echo $queryGrade[0]->datum?>">
   					<br>
 
   					<label class="control-label" for="points">Body&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
