@@ -100,6 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   					<br>
   					<br>
 
+                	<label class="control-label" for="date">Aktivita&nbsp&nbsp&nbsp&nbsp&nbsp:</label>
   					<select name="activity" required="required">
   					  	<?php foreach ($queryResultAktivity as $tableRow):?>
     						<option value="<?php echo $tableRow->idAktivity;?>"><?php echo $tableRow->nazov;?></option>
